@@ -127,6 +127,7 @@ class TrainArgs(Serializable):
     # logging
     wandb: WandbArgs = field(default_factory=WandbArgs)
     mlflow: MLFlowArgs = field(default_factory=MLFlowArgs)
+    comet_ml: CometMLArgs = field(default_factory=CometMLArgs)
 
     # LoRA
     lora: Optional[LoraArgs] = field(default_factory=LoraArgs)
