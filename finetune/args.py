@@ -50,7 +50,7 @@ class MLFlowArgs(Serializable):
             if self.experiment_name is None:
                 raise ValueError("If `mlflow.tracking_uri` is set, `mlflow.experiment_name` must be set as well.")
 
-
+@dataclass
 class CometMLArgs(Serializable):
     """The configuration options for Comet-ml experiment management SDK to be used for tracking metrics, parameters, etc.
 
@@ -74,7 +74,7 @@ class CometMLArgs(Serializable):
     workspace: Optional[str] = None
     experiment_key: Optional[str] = None
     api_key: Optional[str] = None
-    online: True
+    online: bool = True
 
     def __post_init__(self) -> None:
         if self.project_name is not None:
